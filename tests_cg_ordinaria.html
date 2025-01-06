@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Interactivo CG</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            background-color: #333;
+            color: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .container {
+            text-align: center;
+            background-color: #444;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+            max-width: 600px;
+            width: 100%;
+        }
+        h1, h2, h3 {
+            margin-bottom: 10px;
+        }
+        .question {
+            margin-bottom: 20px;
+        }
+        .answer {
+            display: block;
+            background-color: #555;
+            color: white;
+            padding: 15px;
+            margin-bottom: 10px;
+            cursor: pointer;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .answer:hover {
+            background-color: #777;
+        }
+        #next-button, #start-button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 16px;
+            margin-top: 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        #next-button:hover, #start-button:hover {
+            background-color: #0056b3;
+        }
+        .result {
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        #score-container {
+            display: none;
+        }
+        #incorrect-questions-container {
+            display: none;
+            margin-top: 20px;
+        }
+        ul {
+            padding-left: 0;
+            list-style-type: none;
+            text-align: left;
+        }
+        ul li {
+            margin-bottom: 5px;
+        }
+        #reset-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#reset-button:hover {
+    background-color: #c82333;
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Tests Contabilidad de Gestión primer parcial</h1>
+        <h2 id="author-name">Florin Emanuel Todor Gliga && Laura Zafra Alarcos</h2>
+        <div id="question-container">
+            <p id=question>Haz click en "Comenzar Test" para empezar. Disfruta</p>
+            <div id="question-options"></div> <!-- Aquí se mostrarán las opciones de respuesta -->
+        </div>
+        <div class="button-container" id="answer-buttons" style="display: none;">
+            <!-- No se necesitan botones aquí para las opciones -->
+        </div>
+        <button id="next-button" onclick="nextQuestion()" style="display: none;">Siguiente Pregunta</button>
+        <div>
+            <p>Respondidas: <span id="answered-count">0</span></p>
+            <p>Aciertos: <span id="correct-count">0</span></p>
+            <p>Fallos: <span id="incorrect-count">0</span></p>
+            <p>Preguntas disponibles: <span id="available-questions-count">0</span></p>
+            <p id="score-container" style="display: none;">Nota: <span id="score">0</span></p>
+        </div>
+        <div id="incorrect-questions-container" style="display: none;">
+            <h3>Preguntas falladas:</h3>
+            <ul id="incorrect-questions-list"></ul>
+        </div>
+        <button id="start-button" onclick="startTest()">Comenzar Test</button>
+        
+    </div>
+
+    <script>
+        const allQuestions = 
+    [
+
+
+    ];
+        
+
+
+
+const questionsPerTest = 10; // Total de preguntas en el test
+        const maxScore = 4; // Puntaje máximo posible
+        const pointsPerQuestion = 0.4 // Puntos por pregunta
+        let availableQuestions = JSON.parse(localStorage.getItem('availableQuestions')) || allQuestions.slice();
+        let shuffledQuestions, currentQuestionIndex;
+        let correctCount = 0;
+        let incorrectCount = 0;
+        let answeredCount = 0;
+        let incorrectQuestions = [];
+
+        document.getElementById('available-questions-count').textContent = availableQuestions.length;
+
+        function startTest() {
+            if (availableQuestions.length === 0) {
+                alert('Reiniciando preguntas...');
+                resetQuestions();
+                // Mostrar el botón de inicio después de reiniciar
+                document.getElementById('start-button').style.display = 'block';
+                return; // Salir de la función después de reiniciar
+            }
+            
+
+            correctCount = 0;
+            incorrectCount = 0;
+            answeredCount = 0;
+            incorrectQuestions = [];
+            document.getElementById('correct-count').textContent = correctCount;
+            document.getElementById('incorrect-count').textContent = incorrectCount;
+            document.getElementById('answered-count').textContent = answeredCount;
+            document.getElementById('score-container').style.display = 'none';
+            document.getElementById('incorrect-questions-container').style.display = 'none';
+            document.getElementById('incorrect-questions-list').innerHTML = '';
+            shuffledQuestions = availableQuestions.sort(() => Math.random() - 0.5).slice(0, questionsPerTest);
+            currentQuestionIndex = 0;
+            document.getElementById('start-button').style.display = 'none';
+            document.getElementById('next-button').style.display = 'none';
+            document.getElementById('answer-buttons').style.display = 'none';
+            document.getElementById('author-name').style.display = 'none';
+
+            // Mostrar la primera pregunta del nuevo test
+            showQuestion(shuffledQuestions[currentQuestionIndex]);
+
+            // Mostrar los elementos relevantes para el nuevo test
+            document.getElementById('question-container').style.display = 'block';
+            document.getElementById('question-options').style.display = 'block'
+        }
+
+        function resetQuestions() {
+           alert('Reiniciando preguntas...');
+            availableQuestions = allQuestions.slice();
+            localStorage.setItem('availableQuestions', JSON.stringify(availableQuestions));
+            document.getElementById('available-questions-count').textContent = availableQuestions.length;
+            document.getElementById('start-button').style.display = 'block';
+        }
+
+        function showQuestion(question) {
+            document.getElementById('question').innerText = question.question;
+            document.getElementById('question').style.color = 'white'; // Restaurar el color original
+            const optionsContainer = document.getElementById('question-options');
+            optionsContainer.innerHTML = ''; // Limpiar el contenido anterior
+
+            question.options.forEach((option, index) => {
+                const optionElement = document.createElement('div');
+                optionElement.classList.add('answer');
+                optionElement.textContent = option;
+                optionElement.setAttribute('data-option', String.fromCharCode(97 + index));
+                optionElement.setAttribute('onclick', `checkAnswer('${String.fromCharCode(97 + index)}')`);
+                optionsContainer.appendChild(optionElement);
+            });
+
+            document.getElementById('answer-buttons').style.display = 'block';
+        }
+
+        function checkAnswer(answer) {
+            const question = shuffledQuestions[currentQuestionIndex];
+            if (answer === question.correct) {
+                document.getElementById('question').style.color = 'green';
+                correctCount += 1;
+                availableQuestions = availableQuestions.filter(q => q.question !== question.question);
+                localStorage.setItem('availableQuestions', JSON.stringify(availableQuestions));
+                document.getElementById('available-questions-count').textContent = availableQuestions.length;
+            } else {
+                document.getElementById('question').style.color = 'red';
+                incorrectCount++;
+                incorrectQuestions.push({ question: question.question, answer: answer });
+
+                // Resaltar la respuesta correcta
+                const correctOption = document.querySelector(`[data-option="${question.correct}"]`);
+                if (correctOption) {
+                    correctOption.style.backgroundColor = 'green';
+                    correctOption.style.color = 'white';
+                }
+            }
+            answeredCount++;
+            document.getElementById('correct-count').textContent = correctCount;
+            document.getElementById('incorrect-count').textContent = incorrectCount;
+            document.getElementById('answered-count').textContent = answeredCount;
+
+            // Deshabilitar las respuestas para esta pregunta
+            const answerButtons = document.querySelectorAll('.answer');
+            answerButtons.forEach(button => {
+                button.onclick = null; // Eliminar el manejador de eventos
+                button.style.cursor = 'default'; // Cambiar el cursor para indicar que está deshabilitado
+            });
+
+            document.getElementById('answer-buttons').style.display = 'none';
+            document.getElementById('next-button').style.display = 'block';
+        }
+
+        function nextQuestion() {
+            currentQuestionIndex++;
+            if (currentQuestionIndex < shuffledQuestions.length) {
+                showQuestion(shuffledQuestions[currentQuestionIndex]);
+                document.getElementById('question').style.color = 'white';
+                document.getElementById('next-button').style.display = 'none';
+                document.getElementById('answer-buttons').style.display = 'block';
+            } else {
+                let adjustedCorrectCount = correctCount;
+
+                // Calcular penalización por respuestas incorrectas
+                incorrectQuestions.forEach(entry => {
+                    const question = allQuestions.find(q => q.question === entry.question);
+                    const incorrectPenalty = pointsPerQuestion * 0.4; // Penalización del 40% de una respuesta correcta
+                    adjustedCorrectCount -= incorrectPenalty;
+                });
+
+                // Calcular la nota final
+                const score = (correctCount * 0.4) - (incorrectCount * 0.16);
+
+                document.getElementById('question-container').style.display = 'none'; // Ocultar contenedor de preguntas
+                document.getElementById('question-options').style.display = 'none'; // Ocultar opciones de preguntas
+
+                document.getElementById('question').innerText = `Test terminado. Aciertos: ${correctCount}, Fallos: ${incorrectCount}, Nota: ${score.toFixed(2)}`;
+                document.getElementById('score').textContent = score.toFixed(2);
+                document.getElementById('score-container').style.display = 'block';
+                document.getElementById('next-button').style.display = 'none';
+                document.getElementById('start-button').style.display = 'block';
+                document.getElementById('author-name').style.display = 'block';
+
+                showIncorrectQuestions();
+            }
+        }
+
+        function showIncorrectQuestions() {
+            const incorrectQuestionsContainer = document.getElementById('incorrect-questions-container');
+            const incorrectQuestionsList = document.getElementById('incorrect-questions-list');
+            incorrectQuestions.forEach(entry => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${entry.question} (Tu respuesta: ${entry.answer})`;
+                incorrectQuestionsList.appendChild(listItem);
+            });
+            incorrectQuestionsContainer.style.display = 'block';
+            document.getElementById('answer-buttons').style.display = 'none'; // Asegurarse de ocultar las opciones de respuesta al mostrar las preguntas incorrectas
+            document.getElementById('question-options').style.display = 'none'; // Asegurar que las opciones estén ocultas
+        }
+    </script>
+
+<button id="reset-button" onclick="resetQuestions()">Reiniciar Preguntas</button>
+</body>
+</html>
