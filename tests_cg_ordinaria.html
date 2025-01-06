@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Test Interactivo CG</title>
+    <title>Test CG Ordinaria</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -97,8 +97,8 @@
 </head>
 <body>
     <div class="container">
-        <h1>Tests Contabilidad de Gestión primer parcial</h1>
-        <h2 id="author-name">Florin Emanuel Todor Gliga && Laura Zafra Alarcos</h2>
+        <h1>Tests Contabilidad de Gestión Ordinaria</h1>
+        <h2 id="author-name">Florin Emanuel Todor Gliga</h2>
         <div id="question-container">
             <p id=question>Haz click en "Comenzar Test" para empezar. Disfruta</p>
             <div id="question-options"></div> <!-- Aquí se mostrarán las opciones de respuesta -->
@@ -125,7 +125,475 @@
     <script>
         const allQuestions = 
     [
-
+    {
+        "question": "El fenómeno de histéresis de costes tiene su causa en la existencia de:",
+        "options": [
+            "a) Costes regresivos.",
+            "b) Costes semifijos irreversibles.",
+            "c) Costes regresivos."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "La magnitud coste:",
+        "options": [
+            "a) Es una magnitud relativa debido a la indeterminación a menudo asociada a la medida y valoración de los consumos.",
+            "b) Es una magnitud relativa debido a la arbitrariedad que conlleva la asignación de los costes directos.",
+            "c) No es magnitud relativa, sino totalmente objetiva."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "Los costes de subactividad forman parte del coste del producto:",
+        "options": [
+            "a) En los sistemas de costes completos.",
+            "b) En los sistemas de costes parciales.",
+            "c) Los costes de subactividad no se asignan al producto."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "Dentro del ámbito interno:",
+        "options": [
+            "a) Consumo y gasto suponen magnitudes corrientes.",
+            "b) Producción y valor de la producción de un período suponen magnitudes corrientes.",
+            "c) Producción en stock y valor de la producción en stock suponen magnitudes corrientes."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "Los portadores de coste:",
+        "options": [
+            "a) Son elementos conceptuales de la fase de imputación.",
+            "b) Siempre integran costes que valoran la producción.",
+            "c) Son exclusivamente los productos de la empresa."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "Son, entre otros, fines de la Contabilidad de Gestión:",
+        "options": [
+            "a) El estudio de las transacciones referentes a las inversiones que debe realizar la empresa.",
+            "b) La determinación del resultado externo de la empresa.",
+            "c) El suministro de la información relevante necesaria para apoyar la toma de decisiones de los órganos de gestión."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "Los centros de coste recíprocos son centros:",
+        "options": [
+            "a) Cuya actividad revierte directamente en centros principales.",
+            "b) Cuya actividad revierte directamente en la producción.",
+            "c) Que se encuentran dentro de la categoría de auxiliares comunes."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "Los materiales auxiliares son unos materiales:",
+        "options": [
+            "a) Que no se encuentran presentes en el producto final y cuyo coste guarda relación con el volumen de producción.",
+            "b) Presentes en el producto final y cuyo coste no guarda relación con el volumen de producción.",
+            "c) Presentes en el producto final y cuyo coste guarda relación con el volumen de producción."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "El precio de adquisición de una partida de materiales se calcula en relación a la cantidad de material:",
+        "options": [
+            "a) Que figura en la factura del proveedor.",
+            "b) Efectivamente recibida en la empresa.",
+            "c) Solicitada por la empresa en el pedido al proveedor."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "En un modelo orgánico, a coste histórico y que sigue un enfoque de asignación de coste:",
+        "options": [
+            "a) Se utilizan valores prospectivos, en las magnitudes relativas a los costes.",
+            "b) No se utilizan componentes de coste, como elementos acumuladores intermedios de los costes.",
+            "c) No utiliza el portador del coste del producto, en la fase de imputación."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "En el marco del análisis de un proceso de producción:",
+        "options": [
+            "a) El tiempo de sucesión es la suma del tiempo principal y del tiempo complementario.",
+            "b) El tiempo de sucesión es la suma del tiempo activo y del tiempo inactivo.",
+            "c) El tiempo de sucesión es la suma del tiempo preparación y del tiempo transformación."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "En los suministros se registra una coincidencia temporal entre las magnitudes:",
+        "options": [
+            "a) Compra y consumo.",
+            "b) Pago y consumo.",
+            "c) Pago y compra."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "En el sistema diferencial de Taylor, la tarifa retributiva superior se aplica a los trabajadores cuya producción se haya situado:",
+        "options": [
+            "a) Bajo el estándar y desde la primera pieza producida.",
+            "b) En el estándar y desde la primera pieza producida.",
+            "c) Sobre el estándar y desde la primera pieza que supera dicho estándar."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "En un sistema mixto de retribución, tendrán derecho a prima salarial, los trabajadores cuya producción se haya situado:",
+        "options": [
+            "a) Bajo el estándar.",
+            "b) En el estándar.",
+            "c) Sobre el estándar."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "Cuando se utiliza un sistema de destajo puro, el coste de retribución del personal se comporta como:",
+        "options": [
+            "a) Coste fijo.",
+            "b) Coste variable.",
+            "c) Coste semivariable."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "La amortización es la expresión contable:",
+        "options": [
+            "a) De la depreciación financiera que experimentan los medios estructurales.",
+            "b) De la depreciación ordinaria que experimentan los medios estructurales.",
+            "c) De la depreciación extraordinaria que experimentan los medios estructurales."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "El fenómeno de histéresis de costes tiene su causa en la existencia de:",
+        "options": [
+            "a) Costes regresivos.",
+            "b) Costes semifijos irreversibles.",
+            "c) Costes regresivos."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "La magnitud coste:",
+        "options": [
+            "a) Es una magnitud relativa debido a la indeterminación a menudo asociada a la medida y valoración de los consumos.",
+            "b) Es una magnitud relativa debido a la arbitrariedad que conlleva la asignación de los costes directos.",
+            "c) No es magnitud relativa, sino totalmente objetiva."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "Los costes de subactividad forman parte del coste del producto:",
+        "options": [
+            "a) En los sistemas de costes completos.",
+            "b) En los sistemas de costes parciales.",
+            "c) Los costes de subactividad no se asignan al producto."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "Dentro del ámbito interno:",
+        "options": [
+            "a) Consumo y gasto suponen magnitudes corrientes.",
+            "b) Producción y valor de la producción de un período suponen magnitudes corrientes.",
+            "c) Producción en stock y valor de la producción en stock suponen magnitudes corrientes."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "Los portadores de coste:",
+        "options": [
+            "a) Son elementos conceptuales de la fase de imputación.",
+            "b) Siempre integran costes que valoran la producción.",
+            "c) Son exclusivamente los productos de la empresa."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "Son, entre otros, fines de la Contabilidad de Gestión:",
+        "options": [
+            "a) El estudio de las transacciones referentes a las inversiones que debe realizar la empresa.",
+            "b) La determinación del resultado externo de la empresa.",
+            "c) El suministro de la información relevante necesaria para apoyar la toma de decisiones de los órganos de gestión."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "Los centros de coste recíprocos son centros:",
+        "options": [
+            "a) Cuya actividad revierte directamente en centros principales.",
+            "b) Cuya actividad revierte directamente en la producción.",
+            "c) Que se encuentran dentro de la categoría de auxiliares comunes."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "Los materiales auxiliares son unos materiales:",
+        "options": [
+            "a) Que no se encuentran presentes en el producto final y cuyo coste guarda relación con el volumen de producción.",
+            "b) Presentes en el producto final y cuyo coste no guarda relación con el volumen de producción.",
+            "c) Presentes en el producto final y cuyo coste guarda relación con el volumen de producción."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "El precio de adquisición de una partida de materiales se calcula en relación a la cantidad de material:",
+        "options": [
+            "a) Que figura en la factura del proveedor.",
+            "b) Efectivamente recibida en la empresa.",
+            "c) Solicitada por la empresa en el pedido al proveedor."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "En un modelo orgánico, a coste histórico y que sigue un enfoque de asignación de coste:",
+        "options": [
+            "a) Se utilizan valores prospectivos, en las magnitudes relativas a los costes.",
+            "b) No se utilizan componentes de coste, como elementos acumuladores intermedios de los costes.",
+            "c) No utiliza el portador del coste del producto, en la fase de imputación."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "En el marco del análisis de un proceso de producción:",
+        "options": [
+            "a) El tiempo de sucesión es la suma del tiempo principal y del tiempo complementario.",
+            "b) El tiempo de sucesión es la suma del tiempo activo y del tiempo inactivo.",
+            "c) El tiempo de sucesión es la suma del tiempo preparación y del tiempo transformación."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "En los suministros se registra una coincidencia temporal entre las magnitudes:",
+        "options": [
+            "a) Compra y consumo.",
+            "b) Pago y consumo.",
+            "c) Pago y compra."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "En el sistema diferencial de Taylor, la tarifa retributiva superior se aplica a los trabajadores cuya producción se haya situado:",
+        "options": [
+            "a) Bajo el estándar y desde la primera pieza producida.",
+            "b) En el estándar y desde la primera pieza producida.",
+            "c) Sobre el estándar y desde la primera pieza que supera dicho estándar."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "En un sistema mixto de retribución, tendrán derecho a prima salarial, los trabajadores cuya producción se haya situado:",
+        "options": [
+            "a) Bajo el estándar.",
+            "b) En el estándar.",
+            "c) Sobre el estándar."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "Cuando se utiliza un sistema de destajo puro, el coste de retribución del personal se comporta como:",
+        "options": [
+            "a) Coste fijo.",
+            "b) Coste variable.",
+            "c) Coste semivariable."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "La amortización es la expresión contable:",
+        "options": [
+            "a) De la depreciación financiera que experimentan los medios estructurales.",
+            "b) De la depreciación ordinaria que experimentan los medios estructurales.",
+            "c) De la depreciación extraordinaria que experimentan los medios estructurales."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "El sistema de primas de Halsey:",
+        "options": [
+            "a) Supone la aplicación de dos tipos diferentes de tarifas, de manera que la tarifa menor será de aplicación para aquellos casos en los que el trabajador tenga una labor deficiente, mientras que la mayor se aplicará a la labor de los operarios satisfactorios e incluso brillantes.",
+            "b) Garantiza una remuneración mínima al operario en función del tiempo trabajado y establece una prima que consiste en un porcentaje variable del valor de la economía de tiempo lograda.",
+            "c) Garantiza una remuneración mínima al operario en función del tiempo trabajado y establece una prima que consiste en un porcentaje fijo del valor de la economía de tiempo lograda."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "En el contexto del cálculo del coste de los recursos financieros sobre la base de magnitudes flujo, en un periodo t:",
+        "options": [
+            "a) El montante de la inversión en factores circulantes es inferior al coste derivado de los factores circulantes.",
+            "b) El montante de la inversión en factores circulantes es igual al coste derivado de los factores circulantes.",
+            "c) El montante de la inversión en factores circulantes es superior al coste derivado de los factores circulantes."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "El criterio técnico de amortización en función del uso es aplicable cuando:",
+        "options": [
+            "a) Existe una disminución del rendimiento del bien hasta su retirada o fin de su vida útil.",
+            "b) Durante la vida útil del bien la productividad de la maquinaria sea constante.",
+            "c) Ninguna de las respuestas anteriores es correcta."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "En la determinación del coste de los recursos financieros propios, el tipo de interés calculatorio se aplicará sobre:",
+        "options": [
+            "a) El montante del activo necesario para la actividad productiva.",
+            "b) El montante del activo necesario para la actividad productiva minorado en los fondos ajenos.",
+            "c) El montante del neto patrimonial."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "En la clasificación de los centros de coste en función de su nivel de agregación:",
+        "options": [
+            "a) Las unidades de coste siempre coinciden con sus homólogas unidades de trabajo.",
+            "b) Los lugares de coste siempre coinciden con sus homólogas secciones de trabajo.",
+            "c) Las secciones de coste siempre coinciden con sus homólogas secciones de trabajo."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "En una estadística de costes:",
+        "options": [
+            "a) Cuando se opere sobre la base de costes retrospectivos, incluso en el caso de existencia de subactividad, la totalidad de los costes de los centros auxiliares revertirá sobre los centros principales.",
+            "b) Los costes secundarios representan los costes soportados por los centros en la operación de imputación.",
+            "c) Los costes primarios derivan de las prestaciones internas realizadas por los centros auxiliares."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "En la liquidación de una estadística de costes:",
+        "options": [
+            "a) Caso de existencia exclusivamente de centros auxiliares de los principales, el orden de liquidación resulta indiferente.",
+            "b) Caso de existencia tanto de centros auxiliares de los principales como de centros auxiliares propiamente dichos, deben ser liquidados en primer término los primeros.",
+            "c) Caso de existencia tanto de centros auxiliares de los principales como de centros auxiliares propiamente dichos, el orden de liquidación resulta indiferente."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "Portadores de coste ligados a la colocación:",
+        "options": [
+            "a) En el enfoque del Full-costing radical serían, por ejemplo, los costes a reintegrar.",
+            "b) En el enfoque del Direct-costing simple serían, por ejemplo, el coste de trabajos realizados por o para empresas para su inmovilizado.",
+            "c) En el enfoque del Full-costing atenuado serían, por ejemplo, los costes comerciales directos."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "El método puro de división:",
+        "options": [
+            "a) Consiste en dividir el número de unidades de producto tratadas entre el coste total.",
+            "b) Resulta inaplicable en aquellos centros donde los diferentes productos reciben un tratamiento uniforme a nivel individual.",
+            "c) Resulta desconsejable, a nivel global, cuando la empresa opera en un régimen de producción simple con existencias de producto en curso."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "Señale la respuesta correcta:",
+        "options": [
+            "a) El coste básico se forma por el coste de materia prima y el coste de la mano de obra indirecta.",
+            "b) Bajo el modelo inorgánico se prescinde de la fase de localización en el cálculo del coste del portador.",
+            "c) Ninguna de las respuestas anteriores es correcta."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "¿Cómo se realizan las remuneraciones en el sistema de retribución a jornal?",
+        "options": [
+            "a) Se remunera al trabajador según el tiempo trabajado eficientemente y la cantidad producida en dicho tiempo.",
+            "b) Se remunera a los trabajadores según el precio establecido a la unidad de producto terminado, teniendo en cuenta el tiempo empleado.",
+            "c) Solo se remunera el tiempo empleado sin atender a la calidad o cantidad de la prestación realizada."
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "¿Cómo se definen las percepciones económicas extrasalariales?",
+        "options": [
+            "a) Son todos aquellos complementos salariales del trabajador vinculados a su persona o al trabajo.",
+            "b) Aquellas cuyo origen no se encuentra en el trabajo, sino que obedece a circunstancias extraordinarias o gastos que el trabajador ha soportado como consecuencia de su actividad laboral.",
+            "c) Ninguna de las definiciones anteriores se corresponde con las percepciones económicas extrasalariales."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "¿Qué tipo de material se consideraría el haba que viene escondida en el interior del Roscón de Reyes, a efectos de la contabilidad de una pastelería dedicada a su producción?",
+        "options": [
+            "a) Materia Prima",
+            "b) Material Auxiliar",
+            "c) Material Incorporable"
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "Señale cuál supone un ejemplo de Sistema de Retribución del Trabajo Humano en función de la cantidad:",
+        "options": [
+            "a) Sistema de Tarifa Diferencial de Taylor",
+            "b) Sistema de Primas Emerson",
+            "c) Sistema de Retribución a Jornal"
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "¿Cuál de estos tres sistemas emplea un coeficiente de participación del operario en el valor de la economía variable?",
+        "options": [
+            "a) Sistema Halsey",
+            "b) Sistema Rowan",
+            "c) Sistema de Taylor"
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "Señale cuál de las siguientes opciones NO supone un servicio exterior ocasional:",
+        "options": [
+            "a) Reparaciones",
+            "b) Servicios de Profesionales Independientes",
+            "c) Arrendamientos"
+        ],
+        "correct": "c"
+    },
+    {
+        "question": "La depreciación por “evolución técnica o del comportamiento” recibe el nombre de:",
+        "options": [
+            "a) Funcional",
+            "b) Económica",
+            "c) Física"
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "En el criterio de valoración de Precio Última Compra:",
+        "options": [
+            "a) No existe homogeneidad en los criterios de valoración, por eso, el saldo se dice que no es representativo.",
+            "b) Es el criterio de valoración más óptimo que existe.",
+            "c) A y B son incorrectas."
+        ],
+        "correct": "a"
+    },
+    {
+        "question": "Marcar la opción incorrecta sobre los rasgos característicos de los suministros:",
+        "options": [
+            "a) Su conexión se efectúa habitualmente mediante la conexión a una red de distribución.",
+            "b) Son bienes almacenables.",
+            "c) Las magnitudes compra y consumo coinciden en el tiempo."
+        ],
+        "correct": "b"
+    },
+    {
+        "question": "El sistema de tarifa diferencial de Taylor:",
+        "options": [
+            "a) Perjudica al mal trabajador.",
+            "b) Incentiva al buen trabajador.",
+            "c) A y B son correctas."
+        ],
+        "correct": "c"
+    },
+    
 
     ];
         
