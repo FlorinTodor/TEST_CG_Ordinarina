@@ -1637,9 +1637,9 @@
 
 
 
-const questionsPerTest = 10; // Total de preguntas en el test
+const questionsPerTest = 15; // Total de preguntas en el test
         const maxScore = 4; // Puntaje máximo posible
-        const pointsPerQuestion = 0.4 // Puntos por pregunta
+        const pointsPerQuestion = 15.0/4.0 // Puntos por pregunta
         let availableQuestions = JSON.parse(localStorage.getItem('availableQuestions')) || allQuestions.slice();
         let shuffledQuestions, currentQuestionIndex;
         let correctCount = 0;
